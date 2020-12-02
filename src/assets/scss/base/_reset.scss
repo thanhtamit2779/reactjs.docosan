@@ -1,0 +1,29 @@
+html,
+body {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    color: $color-default;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
+.btn-reset {
+    @include border-radius(0);
+    @include box-shadow(none);
+    border:none;
+    color: currentColor;
+    background: transparent;
+}

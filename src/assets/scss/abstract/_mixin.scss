@@ -1,0 +1,97 @@
+// Border radius
+@mixin border-radius($value, $property: 'border-radius') {
+    #{$property}: $value;
+    -moz-#{$property}: $value;
+    -webkit-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+}
+
+// Calc
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+// Box shadow
+@mixin box-shadow($value) {
+    box-shadow: $value;
+    -moz-box-shadow: $value;
+    -webkit-box-shadow: $value;
+    -o-box-shadow: $value;
+}
+
+// Text shadow
+@mixin text-shadow($value) {
+    text-shadow: $value;
+    -moz-text-shadow: $value;
+    -webkit-text-shadow: $value;
+    -o-text-shadow: $value;
+}
+
+// Transform
+@mixin transform($value, $property: '') {
+    @if($property == '') {
+        transform: #{$value};
+        -o-transform: #{$value};
+        -moz-transform: #{$value};
+        -ms-transform: #{$value};
+        -webkit-transform: #{$value};
+    }
+    @else {
+        transform-#{property}: #{$value};
+        -moz-transform-#{property}: #{$value};
+        -o-transform-#{property}: #{$value};
+        -ms-transform-#{property}: #{$value};
+        -webkit-transform-#{property}: #{$value};
+    }
+}
+
+// Transition
+@mixin transition($property: '') {
+    transition: #{$property};
+    -ms-transition: #{$property};
+    -webkit-transition: #{$property};
+}
+
+// Ordering
+@mixin order($position:1) {
+    order: $position;
+    -webkit-order: $position;
+    -ms-order: $position;
+    -moz-order: $position;
+}
+
+// Animation
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+	  @content; 
+	}
+	@-moz-keyframes #{$name} {
+	  @content;
+	}
+	@-ms-keyframes #{$name} {
+	  @content;
+	}
+	@keyframes #{$name} {
+	  @content;
+	} 
+}
+
+@mixin animation($value, $property: '') {
+    @if($property == '') {
+        animation: $value;
+        -moz-animation: $value;
+        -webkit-animation: $value;
+        -ms-animation: $value;
+        -o-animation: $value;
+    }
+    @else {
+        animation-#{property}: $value;
+        -moz-animation-#{property}: $value;
+        -o-animation-#{property}: $value;
+        -webkit-animation-#{property}: $value;
+        -ms-animation-#{property}: $value;
+    }
+}

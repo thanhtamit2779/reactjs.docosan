@@ -1,0 +1,111 @@
+@import "./abstract/variable";
+@import "./abstract/mixin";
+
+@import "./base/fonts";
+@import "./base/reset";
+@import "./base/animation";
+@import "./base/utilities";
+
+/* Sau khi xong => chia file riêng */
+.doctor-item {
+    @include border-radius(10px);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    padding: 15px;
+    margin-bottom: 30px !important;
+    color: initial;
+    background: #fff;
+
+    figure { 
+        max-width: 125px; 
+        margin-right: 15px !important;
+    }
+
+    &__avatar {
+        @include border-radius(4px);
+    }
+
+    &__rating {
+        svg {
+            color: rgb(255, 196, 85);
+        }
+    }
+
+    &__position {
+        span {
+            margin-right: 10px;
+        }
+    }
+
+    p {
+        margin-bottom: 2px !important;
+    }
+}
+
+.filter-selectbox {
+    margin-right: 30px;
+    position: relative;
+
+    &__name {
+        margin-right: 30px;
+    }
+
+    &__content {
+        position: relative;
+
+        &__btn {
+            @include border-radius(999px);
+            padding: 2px 20px;
+            color: $color-white;
+            border: none;
+            background: $color-green;
+
+            &--not-active {
+                min-width: 160px;
+                background: #fff;
+                color: #0A2C4D;
+                border: 1px solid $color-grey
+            }
+
+            &--active {
+                background: $color-green;
+                min-width: 160px;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &__dropdown {
+            @include border-radius(10px);
+            @include transition(all 0.2s ease-in-out 0s);
+            position: absolute;
+            left: 0;
+            top: 35px;
+            display: none;
+            height: auto;
+            padding: 15px 20px; 
+            box-shadow: 0 0 2px rgba(0, 0, 0, .12),
+            0 2px 4px rgba(0, 0, 0, .24);
+            -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .12),
+            0 2px 4px rgba(0, 0, 0, .24);
+            -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .12),
+            0 2px 4px rgba(0, 0, 0, .24);
+
+            input {
+                margin-right: 10px;
+            }
+
+            &--not-active {
+               display: none;
+            }
+
+            &--active {
+                height: auto;
+                display: block;
+            }
+        }
+    }
+}
