@@ -56,13 +56,23 @@
 
         &__btn {
             @include border-radius(999px);
+            position: relative;
             padding: 2px 20px;
+            min-width: 170px;
             color: $color-white;
             border: none;
             background: $color-green;
 
+            .close {
+                color: #fff;
+                font-size: 1rem;
+                opacity: 1;
+                position: absolute;
+                right: 15px;
+                top: 5px;
+            }
+
             &--not-active {
-                min-width: 160px;
                 background: #fff;
                 color: #0A2C4D;
                 border: 1px solid $color-grey
@@ -70,7 +80,7 @@
 
             &--active {
                 background: $color-green;
-                min-width: 160px;
+
             }
 
             &:focus {
@@ -85,6 +95,7 @@
             left: 0;
             top: 35px;
             display: none;
+            background: #fff;
             height: auto;
             padding: 15px 20px; 
             box-shadow: 0 0 2px rgba(0, 0, 0, .12),
@@ -95,6 +106,8 @@
             0 2px 4px rgba(0, 0, 0, .24);
 
             input {
+                width: 16px;
+                height: 16px;
                 margin-right: 10px;
             }
 

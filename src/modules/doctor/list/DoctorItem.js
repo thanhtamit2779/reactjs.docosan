@@ -1,4 +1,4 @@
-import { Row, Col, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faStar,
